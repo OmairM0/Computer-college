@@ -1,3 +1,6 @@
+<?php
+include("admin/conn.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,10 +36,20 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="#">عن الكُلية</a>
+                        <a href="#about">عن الكُلية</a>
                     </li>
                     <li>
                         <a href="#">أقسام الكٌلية</a>
+                        <ul class="dorp">
+                        <li><a href='cs/index.php'>علوم حاسوب</a></li>
+                        <li><a href='ce/index.php'>هندسة حاسوب</a></li>
+                            <?php
+                                // $query = mysqli_query($conn,"SELECT * FROM parts");
+                                // while ($row = mysqli_fetch_array($query)) {
+                                //     echo "<li><a href='#'>{$row[1]}</a></li>";
+                                // }
+                            ?>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -57,7 +70,7 @@
     <!-- Start About College -->
     <div class="about">
         <div class="container">
-            <h2>عن الكٌلية</h2>
+            <h2 id="about">عن الكٌلية</h2>
             <p>
                 كلية علوم وهندسة الحاسوب في جامعة الحديدة هي كلية حكومية تأسست في عام 1998. تقع الكلية في مدينة الحديدة،
                 وهي

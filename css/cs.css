@@ -7,13 +7,14 @@
 
 :root {
   --main-color: #f09a3e;
-  --hover-color: #ffb74d; /* Varibles */
+  --hover-color: #ffb74d;
 }
 
 body {
   font-family: "Cairo", sans-serif;
   direction: rtl;
   /* background-color: var(--main-color); */
+  /* height: 100vh; */
 }
 
 a {
@@ -69,7 +70,7 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* location of Element */
+  position: relative;
 }
 
 header .menu-icon,
@@ -89,7 +90,7 @@ header .menu-icon i {
 
 header .menu {
   width: 30%;
-  transition: all 0.5s; /* animation */
+  transition: all 0.5s;
 }
 
 header .menu > ul {
@@ -199,58 +200,20 @@ header .menu ul li:nth-of-type(2) ul li {
 
 /* End Header */
 
-/* Start Landing */
-.landing {
-  position: relative;
-  height: calc(100vh - 80px);
-  background-image: url(../imgs/landing.png);
-  background-size: cover;
-  text-align: center;
-}
-
-.landing .overlay {
-  background-color: #20202096;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.landing .image img {
-  max-width: 100%;
-}
-
-.landing .intro-text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  color: #fff;
-  text-align: center;
-}
-/* End Landing */
-
-/* Start About College */
+/* Start About */
 .about {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  /* background-color: #eee; */
+  margin-top: 50px;
+  text-align: center;
 }
 
 .about h2 {
-  text-align: center;
-  color: #ff9800;
+  color: var(--hover-color);
 }
 
-.about .container p {
-  text-align: center;
-  margin: 0;
-  line-height: 1.7;
+.about p {
+  line-height: 2;
 }
-/* End About College */
+/* End About */
 
 /* Start Footer */
 footer {

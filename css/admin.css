@@ -1,0 +1,394 @@
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #ff9800;
+  --hover-color: #ffb74d;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    /* width: 970px; */
+    width: 750px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    /* width: 1170px; */
+    width: 960px;
+  }
+}
+
+/* End Global Rules */
+
+/* Start Sidebar */
+.sidebar {
+  min-height: 100vh;
+  background-color: #fff;
+  width: 18%;
+  /* padding: 15px; */
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    width: 25%;
+    /* display: none; */
+    position: fixed;
+    left: -30%;
+    top: 0;
+    z-index: 999;
+    transition: all 0.3s;
+    box-shadow: 0px 12px 46px -3px rgb(0 0 0 / 10%);
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 55%;
+    left: -75%;
+  }
+}
+
+.sidebar .header-sidebar {
+  text-align: center;
+  color: var(--main-color);
+  border-bottom: 1px solid #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sidebar .header-sidebar h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.sidebar .content-sidebar {
+  margin-top: 20px;
+}
+
+.sidebar .content-sidebar ul li {
+  margin-bottom: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sidebar .content-sidebar ul li.active {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.sidebar .content-sidebar ul li:hover {
+  background-color: var(--hover-color);
+  color: #fff;
+}
+
+/* ------ */
+.menu-icon {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  background-color: var(--main-color);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 0px 17px -3px rgb(0 0 0 / 26%);
+}
+
+.menu-icon,
+.menu .close {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .menu-icon {
+    display: flex;
+  }
+}
+
+.menu-icon i {
+  font-size: 25px;
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .overlay {
+    display: block;
+  }
+
+  .overlay.active {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+/* End Sidebar */
+
+/* Start Contnent */
+.content {
+  width: 80%;
+  background-color: #eee;
+  min-height: 100vh;
+}
+
+@media (max-width: 991px) {
+  .content {
+    /* width: 73%; */
+    width: 100%;
+  }
+}
+
+.content > div {
+  display: none;
+}
+
+.content .container h2 span {
+  color: #00bcd4;
+}
+
+/* End Contnent */
+
+/* Start Parts And Subjects */
+.parts button.addBtn,
+.subjects button.addBtn {
+  float: left;
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  transition: all 0.3s;
+}
+
+.parts button.addBtn:hover,
+.subjects button.addBtn:hover {
+  background-color: var(--hover-color);
+}
+
+.parts .container > div,
+.subjects .container > div {
+  clear: both;
+}
+
+.parts .add-part,
+.subjects .add-subject {
+  display: none;
+}
+
+.parts .add-part > div,
+.parts .main-content .edit,
+.subjects .add-subject > div,
+.subjects .main-content .edit {
+  text-align: center;
+}
+
+.parts .add-part input,
+.subjects .add-subject input,
+.parts .main-content .edit input,
+.subjects .main-content .edit input {
+  display: block;
+  height: 40px;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #616161;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.parts .add-part input:focus,
+.parts .main-content .edit input:focus,
+.subjects .add-subject input:focus,
+.subjects .main-content .edit input:focus {
+  outline: none;
+  border: 1px solid var(--main-color);
+  box-shadow: 0 0 0 0.05rem var(--main-color);
+}
+
+.parts .add-part button,
+.parts .main-content .edit button,
+.subjects .add-subject button,
+.subjects .main-content .edit button {
+  width: 100px;
+  padding: 7px 10px;
+  border: none;
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 6px;
+  transition: 0.3s;
+}
+
+.parts .add-part button.saveBtn,
+.parts .main-content .edit button.editSaveBtn,
+.subjects .add-subject button.saveBtn,
+.subjects .main-content .edit button.editSaveBtn {
+  background-color: #4caf50;
+}
+
+.parts .add-part button.saveBtn:hover,
+.parts .main-content .edit button.editSaveBtn:hover,
+.subjects .add-subject button.saveBtn:hover,
+.subjects .main-content .edit button.editSaveBtn:hover {
+  background-color: #66cc6a;
+}
+
+.parts .add-part button.backBtn,
+.parts .main-content .edit button.editCanceBtn,
+.subjects .add-subject button.backBtn,
+.subjects .main-content .edit button.editCanceBtn {
+  background-color: #f44336;
+}
+
+.parts .add-part button.backBtn:hover,
+.parts .main-content .edit button.editCanceBtn:hover,
+.subjects .add-subject button.backBtn:hover,
+.subjects .main-content .edit button.editCanceBtn:hover {
+  background-color: #ff786e;
+}
+
+.parts .main-content .title,
+.subjects .main-content .title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #eee;
+  padding: 5px 10px;
+}
+
+.parts .main-content .title h3,
+.subjects .main-content .title h3 {
+  font-size: 10px;
+  color: #616161;
+}
+
+.parts .main-content .title h3.h-name,
+.subjects .main-content .title h3.h-name {
+  width: 100px;
+}
+
+.parts .main-content .box-part,
+.subjects .main-content .box-subject {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 7px;
+}
+
+.box-part p,
+.box-subject p {
+  /* width: 67.39px; */
+  font-size: 14px;
+}
+
+.box-part p.name,
+.box-subject p.name {
+  width: 100px;
+}
+
+.box-part p.edit-delete-icon,
+.box-subject p.edit-delete-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40px;
+}
+
+.box-part p.edit-delete-icon i,
+.box-subject p.edit-delete-icon i {
+  cursor: pointer;
+}
+
+.box-part p.edit-delete-icon i:first-of-type,
+.box-subject p.edit-delete-icon i:first-of-type {
+  color: #f44336;
+}
+
+.box-part p.edit-delete-icon i:last-of-type,
+.box-subject p.edit-delete-icon i:last-of-type {
+  color: #03a9f4;
+}
+
+.parts .main-content .edit,
+.subjects .main-content .edit {
+  margin-bottom: 10px;
+  background-color: #fff;
+  /* padding: 10px; */
+  height: 0px;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.parts .main-content .edit.show,
+.subjects .main-content .edit.show {
+  height: 162px;
+  padding: 10px;
+}
+/* End Parts */
+
+/* Start Notification */
+.notification {
+  position: fixed;
+  bottom: 50px;
+  right: -230px;
+  background-color: #009688;
+  color: #fff;
+  width: 215px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+/* End Notification */
